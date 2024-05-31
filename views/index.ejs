@@ -1,0 +1,99 @@
+<%- include('partials/header') -%>
+<!--css for playlist-->
+<style>
+    .playlist-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .playlist-item {
+        display: flex;
+        align-items: center;
+        background-color: #333; /* Dark background for better visibility */
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .playlist-thumbnail img {
+        width: 50px; /* Smaller thumbnail size */
+        height: auto;
+        margin-right: 10px;
+    }
+
+    .playlist-info h4 {
+        color: white; /* White text for visibility */
+        margin: 0;
+        font-size: 14px;
+    }
+
+    .add-to-playlist-button {
+        background-color: #4CAF50; /* Green background */
+        color: white; /* White text */
+        border: none;
+        padding: 5px 10px;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    .add-to-playlist-button:hover {
+        background-color: #45a049; /* Darker green on hover */
+    }
+</style>
+
+
+<div class="wrapper">
+    <!-- logo -->
+    <div class="logo">
+        <div class="container">
+            <p><span>Movie Library</span></p>
+        </div>
+    </div>
+    <!-- end of logo -->
+
+    <!-- logout button-->
+    <div class="logout-container">
+        <form action="/login" method="GET">
+            <button type="submit" class="logout-button">Logout</button>
+        </form>
+    </div>
+    <!--end of logout button-->
+
+    <!-- search container -->
+    <div class="search-container">
+        <div class="search-element">
+            <h3>Search Your Movie:</h3>
+            <input type="text" class="form-control" placeholder="Search Movie Title ..." id="movie-search-box"
+                onkeyup="findMovies()" onclick="findMovies()">
+
+            <div class="search-list hide-search-list" id="search-list">
+                <!-- list here -->
+            </div>
+        </div>
+    </div>
+    <!-- end of search container -->
+
+    <!-- result container -->
+    <div class="container">
+        <div class="result-container">
+            <div class="result-grid" id="result-grid">
+                <!-- movie information here -->
+            </div>
+        </div>
+    </div>
+    <!-- end of result container -->
+
+    <!-- playlist container -->
+    <div class="container">
+        <h3>Your Playlist:</h3>
+        <div class="playlist-grid" id="playlist-grid">
+            <!-- playlist items here -->
+        </div>
+    </div>
+    <!-- end of playlist container -->
+</div>
+
+<!-- movie app js -->
+<script src="script.js"></script>
+
+<%- include('partials/footer') -%>
