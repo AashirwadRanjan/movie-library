@@ -12,6 +12,7 @@ For development, you will only need Node.js and a node global package, npm, inst
 Also, be sure to have `git` available in your PATH, `npm` might need it (You can find git [here](https://git-scm.com/)).
 
 ### To run project
+also for node_modules type "npm install"
 ```
 npm start
 ```
